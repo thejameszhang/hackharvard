@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("reject").addEventListener("click", closeMain);
-    document.getElementById("accept").addEventListener("click", openSidebar);
+    var rejectElements = document.getElementsByClassName('.reject');
+    for (i = 0; i < rejectElements.length; i++) {
+        rejectElements[i].addEventListener("click", closeMain);
+    }
+    var acceptElements = document.getElementsByClassName(".accept");
+    for (i = 0; i < rejectElements.length; i++) {
+        rejectElements[i].addEventListener("click", openSidebar);
+    }
   });
 function closeMain(element) {
     window.close();
