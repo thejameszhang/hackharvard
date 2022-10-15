@@ -9,10 +9,18 @@
   },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
-  },
-  "content_scripts": [
-    {
-        "matches": ["https://*/*"],
-        "js": ["content_script.js"]
-    } ]
+  }
+  ,"host_permissions": ["https://*/*"],
+  "permissions":[
+      "activeTab",
+      "scripting",
+      "contextMenus", 
+      "tabs",
+      "webNavigation",
+      "webRequest", 
+      "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }

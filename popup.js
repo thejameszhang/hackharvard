@@ -5,16 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function closeMain(element) {
     window.close();
 };
-function sendMessage(){
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
-          console.log("sent Hello from popup");
-        });
+async function getCurrentTab() {
+    let queryOptions = { active: true, lastFocusedWindow: true };
+    // `tab` will either be a `tabs.Tab` instance or `undefined`.
+    let [tab] = await chrome.tabs.query(queryOptions);
+    return tab;
+  }
+async function openSidebar(element) {
+    // send message to content script
+    console.log("open sidebar");
+    const tab = await getCurrentTab();
+    chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: ['content_script.js']
       });
 }
-function openSidebar(element) {
-    // send message to content script
-    // window.close();
-};
-
-

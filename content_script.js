@@ -1,13 +1,3 @@
-// chrome.runtime.onConnect.addListener(function(port) {
-//     port.onMessage.addListener(function(msg) {
-//       port.postMessage({counter: msg.counter+1});
-//     });
-//   });
-  
-// chrome.runtime.onMessage.addListener(
-// function(request, sender, sendResponse) {
-//     sendResponse({counter: request.counter+1});
-// });
-const template = document.createElement('div');
-template.innerHTML = "<div> Side Bar Here </div>";
-document.body.appendChild(template);
+const sidebar = document.createElement("div");
+sidebar.innerHTML = '<div>SIDEBAR HERE </div>' // we'll replace this with the actual sidebar code
+document.body.appendChild(sidebar);
