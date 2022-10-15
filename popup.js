@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-<<<<<<< HEAD
     var rejectElements = document.getElementsByClassName('.reject');
     for (i = 0; i < rejectElements.length; i++) {
         rejectElements[i].addEventListener("click", closeMain);
@@ -8,10 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     for (i = 0; i < rejectElements.length; i++) {
         rejectElements[i].addEventListener("click", openSidebar);
     }
-=======
-    document.getElementById("reject").addEventListener("click", closeMain);
-    document.getElementById("accept").addEventListener("click", openSidebar);
->>>>>>> 6b5c3ee61515df0408115b91167b562063b65bf3
   });
 function closeMain(element) {
     window.close();
