@@ -1,0 +1,10 @@
+{
+  "name": "TermNCo",
+  "description": "A tool designed to make terms and conditions readable",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "init_popup": "hello.html",
+    "default_icon": "hello_extensions.png"
+  }
+}
