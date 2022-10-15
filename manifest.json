@@ -4,7 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "init_popup": "hello.html",
-    "default_icon": "hello_extensions.png"
+    "init_popup": "init.html",
+    "default_icon": "termnco.png"
   }
 }
