@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     for (i = 0; i < rejectElements.length; i++) {
         rejectElements[i].addEventListener("click", openSidebar);
     }
-
-    document.getElementsByClassName("reject").addEventListener("click", closeMain);
-    document.getElementsByClassName("accept").addEventListener("click", openSidebar);
   });
 function closeMain(element) {
     window.close();
