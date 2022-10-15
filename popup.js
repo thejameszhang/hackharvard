@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var rejectElements = document.getElementsByClassName('.reject');
-    for (i = 0; i < rejectElements.length; i++) {
-        rejectElements[i].addEventListener("click", closeMain);
-    }
-    var acceptElements = document.getElementsByClassName(".accept");
-    for (i = 0; i < rejectElements.length; i++) {
-        rejectElements[i].addEventListener("click", openSidebar);
-    }
-
-    document.getElementsByClassName("reject").addEventListener("click", closeMain);
-    document.getElementsByClassName("accept").addEventListener("click", openSidebar);
+    document.getElementById("reject").addEventListener("click", closeMain);
+    document.getElementById("accept").addEventListener("click", openSidebar);
   });
 function closeMain(element) {
     window.close();
@@ -28,4 +19,5 @@ async function openSidebar(element) {
         target: { tabId: tab.id },
         files: ['content_script.js']
       });
+    window.close();
 }
