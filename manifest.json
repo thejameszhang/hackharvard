@@ -4,7 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "init_popup": "init_popup.html",
-    "default_icon": "termnco.png"
+    "default_popup": "default_popup.html",
+    "default_icon": "icon.png"
   }
 }
