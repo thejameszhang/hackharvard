@@ -5,7 +5,7 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel
 original_text = ""
 
 # Instantiating the model and tokenizer with gpt-2
-tokenizer = GPT2Tokenizer.from_prerained('gpt2')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model=GPT2LMHeadModel.from_pretrained('gpt2')
 
 # Encoding text to get input ids & pass them to model.generate() - this max length param should
