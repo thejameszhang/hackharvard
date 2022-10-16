@@ -16,7 +16,7 @@ Our concerns were fully validated when we got to know that a massive tech compan
 
 The main product is the python backend, with our in-house flask-based WebApp API, which we can use for many of our goals, a chrome extension, a flutter-based android and ios app, and Qt-based local apps on mac and windows. This forms somewhat of a microservice architecture.
 
-The microservice we were able to fully develop and use as a proof of concept was the chrome extension, due to its low requirements.
+The microservice we were able to fully develop and use as a proof of concept was the chrome extension, due to its low requirements, but the ability to build sophisticated view controller mechanisms efficiently and fast.
 
 #### Chrome Extension
 
