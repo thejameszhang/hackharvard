@@ -36,6 +36,24 @@ function downloadText(element){
 async function openTextModal(text) {
     document.getElementById("text").classList.remove("d-none");
     // need to transform text into the summary  
-    document.getElementById('textarea').value = text;
-    console.log("making text bar visible");
+    const summary = await summarized(text);
+    document.getElementById('textarea').value = summary;
 }
+async function summarized(text){
+    const response = await fetch("http://127.0.0.1:5000/get_summary", {
+            method: 'POST',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+            "text": text })
+    });
+    Promise.resolve(response.text()).then(data => {
+        console.log(data);
+        return data;
+    });
+
+}
+
+//http://127.0.0.1:5000/get_summary 
