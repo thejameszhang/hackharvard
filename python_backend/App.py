@@ -13,7 +13,8 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def get_summary():
     data = request.json
     text = data['text']
-    summary = model.summarize(text)
+    granularity = data['size']
+    summary = model.summarize(text, granularity)
     print(summary)
     return summary
 if __name__ == '__main__':
