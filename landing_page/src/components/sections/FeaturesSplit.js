@@ -83,7 +83,7 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-01.png')}
+                  src={require('./../../assets/images/retaindetails.png')}
                   alt="Features split 01"
                   width={528}
                   height={396} />
@@ -125,7 +125,7 @@ const FeaturesSplit = ({
                   See previous reviews
                   </h3>
                 <p className="m-0">
-                  Join a community of like-minded individuals who care about their legal rights and access helpful community reviews and discussion forums.
+                  Join a community of like-minded individuals who care about their legal rights. Access helpful community reviews and discussion forums.
                   </p>
               </div>
               <div className={
