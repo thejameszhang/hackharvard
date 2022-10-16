@@ -33,14 +33,20 @@ The Flutter app
 
 ## Challenges we ran into
 
+Maintaining best site security practices for our chrome extension, which meant being careful about scripting and identifiers.
+
+Integrating the flask backend with our frontend through a custom API and asynchronous calls.
+
+Setting up and training the NLP model
 ## Accomplishments that we're proud of
+Structuring our microservice architecture and getting the different pieces to communicate through our custom API
 
 ## What we learned
-
+Utilizing different members' strengths in different areas was important for concurrent development. Consistent communication was essential for putting the moving parts together. Planning and designing our system together was also pivotal in establishing our next steps clearly.
 ## What's next for TermnCo
-Scale
+The Flutter app is a good example of possibly scaling our application to be more accessible to different users across platforms. 
 ## Dependencies
 Chrome extension: Bootstrap 4, jQuery
-Flutter app: 
+Flutter app: CMake, Flutter
 Landing page/ demo: React, Gatsby
 Python backend: flask, flask-cors, transformers, torch (PyTorch)
