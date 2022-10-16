@@ -11,11 +11,6 @@
     "extension_pages": "script-src 'self'; object-src 'self'"
   }
   ,"host_permissions": ["https://*/*"],
-  "content_scripts": [
-    {
-      "matches": ["http://*/*","https://*/*"],
-      "js": ["jquery.js"]
-    }],
   "permissions":[
       "activeTab",
       "scripting",
