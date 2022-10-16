@@ -17,7 +17,7 @@ async function openSidebar(element) {
     const tab = await getCurrentTab();
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ['content_script.js', 'toolbox/toolbox.js']
+        files: ['content_script.js','toolbox/toolbox.js']
       });
     window.close();
 }
