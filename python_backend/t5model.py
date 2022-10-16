@@ -30,7 +30,8 @@ class T5Model:
     def summarize(self, text):
         text = "summarize:" + text
         input_ids = self.tokenizer.encode(text, return_tensors='pt', max_length=512)
-        summary_ids = self.model.generate(input_ids, max_length=100)
+        summary_ids = self.model.generate(input_ids, max_length=128)
         t5_summary = self.tokenizer.decode(summary_ids[0])
         return t5_summary
+
 print(T5Model().summarize(original_text))
