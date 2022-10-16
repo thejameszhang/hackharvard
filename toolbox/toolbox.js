@@ -6,15 +6,19 @@ document.getElementById("zoomOut").addEventListener("click", zoomOut);
 document.getElementById("download").addEventListener("click", downloadText);
 console.log("event listeners added");
 
-function parseAll(element){};
+function parseAll(element){
+    const text = "placeholder from API call";
+    openTextModal(text);
+};
 function parseSelected(element) {
-    console.log(window.getSelection().toString());
+    const text = window.getSelection().toString();
+    openTextModal(text);
 };
 function zoomIn(element){};
 function zoomOut(element){};
 function downloadText(element){
     console.log("download clicked");
-    const file = new File([window.getSelection().toString()], 'new-note.txt', {
+    const file = new File([window.getSelection().toString()], 'summary.txt', {
     type: 'text/plain',
     });
   
@@ -29,3 +33,8 @@ function downloadText(element){
     document.body.removeChild(link)
     window.URL.revokeObjectURL(url)
 };
+async function openTextModal(text) {
+    document.getElementById("text").classList.remove("d-none");
+    document.getElementById('textarea').value = text;
+    console.log("making text bar visible");
+}
