@@ -1,4 +1,4 @@
-# hackharvard
+## hackharvard
 
 ## Inspiration
 
@@ -14,14 +14,21 @@ A study conducted at the Boston College Law Review by Uri Benoliel called [The D
 Our concerns were fully validated when we got to know that a massive tech company like Google admitted to the unreadability of its own Terms of Service in 2012 and now attempts to make it as readable as possible, but this is just an appearance of a needle in a haystack.
 ## What it does
 
-The main product is the python backend, with our in-house flask-based WebApp API, which we can use for many of our goals, a chrome extension, a flutter-based android and ios app, and Qt-based local apps on mac and windows. This forms somewhat of a microservice architecture.
+The main product is the python backend, with our in-house flask-based WebApp API, which we can use for many of our goals, a chrome extension, a flutter-based android and ios app, and Qt-based local apps on mac and windows. This forms our microservice architecture. We also have a demo landing page implemented with React.
 
+<<<<<<< HEAD
 The microservice we were able to fully develop and use as a proof of concept was the chrome extension, due to its low requirements, but the ability to build sophisticated view controller mechanisms efficiently and fast.
+||||||| a11bbc80
+The microservice we were able to fully develop and use as a proof of concept was the chrome extension, due to its low requirements.
+=======
+## Chrome Extension
+>>>>>>> 8ae19f193bb6e5d516b9f13302d4a5e0bb8d2eea
 
-#### Chrome Extension
+The Google Chrome extension is meant to be source of convenience for our users. Simply by installing our extension and selecting their required text, users can get a customized summary of complex legal documents with a single click. They can also adjust the granularity of this summary and download it as desired.
 
 ## How we built it
 
+The Google Chrome extension is implemented primarily in JavaScript and styled with Bootstrap. It makes calls to our custom API in our Python backend .... etc.
 ## Challenges we ran into
 
 ## Accomplishments that we're proud of
@@ -29,3 +36,9 @@ The microservice we were able to fully develop and use as a proof of concept was
 ## What we learned
 
 ## What's next for TermnCo
+
+## Dependencies
+Chrome extension: Bootstrap 4, jQuery
+Flutter app: 
+Landing page/ demo: React, Gatsby
+Python backend: flask, flask-cors, transformers, torch (PyTorch)
