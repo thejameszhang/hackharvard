@@ -27,11 +27,9 @@ class T5Model:
         self.model = T5ForConditionalGeneration.from_pretrained('t5-small')
         self.tokenizer = T5Tokenizer.from_pretrained('t5-small')
 
-    def summarize(self, text):
+    def summarize(self, text, granularity):
         text = "summarize:" + text
         input_ids = self.tokenizer.encode(text, return_tensors='pt', max_length=512)
-        summary_ids = self.model.generate(input_ids, max_length=128)
+        summary_ids = self.model.generate(input_ids, max_length=((granularity+1) * 32))
         t5_summary = self.tokenizer.decode(summary_ids[0])
         return t5_summary
-
-print(T5Model().summarize(original_text))
