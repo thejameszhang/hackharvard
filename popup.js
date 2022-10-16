@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("reject").addEventListener("click", closeMain);
     document.getElementById("accept").addEventListener("click", openSidebar);
   });
-function closeMain(element) {
+
+  function closeMain(element) {
     window.close();
 };
 async function getCurrentTab() {
