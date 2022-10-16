@@ -43,7 +43,7 @@ const FeaturesSplit = ({
   );
 
   const splitClasses = classNames(
-    'split-wrap',
+    'split-wrap ',
     invertMobile && 'invert-mobile',
     invertDesktop && 'invert-desktop',
     alignTop && 'align-top'
@@ -109,8 +109,8 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-02.png')}
-                  alt="Features split 02"
+                  src={require('./../../assets/images/zoom.png')}
+                  alt="Granularity control"
                   width={528}
                   height={396} />
               </div>
