@@ -1,10 +1,8 @@
-console.log("Toolbox.js loaded");
 document.getElementById("all").addEventListener("click", parseAll);
 document.getElementById("select").addEventListener("click", parseSelected);
 document.getElementById("zoomIn").addEventListener("click", zoomIn);
 document.getElementById("zoomOut").addEventListener("click", zoomOut);
 document.getElementById("download").addEventListener("click", downloadText);
-console.log("event listeners added");
 
 function parseAll(element){
     const text = "placeholder from API call";
@@ -36,8 +34,15 @@ function downloadText(element){
 async function openTextModal(text) {
     document.getElementById("text").classList.remove("d-none");
     // need to transform text into the summary  
-    const summary = await summarized(text);
-    document.getElementById('textarea').value = summary;
+    try {
+        showSpinner();
+        const summary = await summarized(text);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        hideSpinner();
+      }
+    
 }
 async function summarized(text){
     const response = await fetch("http://127.0.0.1:5000/get_summary", {
@@ -51,9 +56,33 @@ async function summarized(text){
     });
     Promise.resolve(response.text()).then(data => {
         console.log(data);
+        document.getElementById('textarea').value = format(data);
         return data;
     });
 
 }
-
+function showSpinner() {
+    document.getElementById('loader').style.display = 'flex';
+}
+  
+function hideSpinner() {
+    document.getElementById('loader').style.display = 'none';
+}
+// formats our data
+function format(text){
+    var res = "";
+    var pass = false;
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === "<"){
+            pass = true;
+        }
+        else if (!pass){
+            res += text[i] ;
+        }
+        else if (text[i] === ">"){
+            pass = false;
+        }
+      }
+    return res;
+}
 //http://127.0.0.1:5000/get_summary 
