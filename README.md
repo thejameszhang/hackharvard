@@ -16,19 +16,21 @@ Our concerns were fully validated when we got to know that a massive tech compan
 
 The main product is the python backend, with our in-house flask-based WebApp API, which we can use for many of our goals, a chrome extension, a flutter-based android and ios app, and Qt-based local apps on mac and windows. This forms our microservice architecture. We also have a demo landing page implemented with React.
 
-<<<<<<< HEAD
 The microservice we were able to fully develop and use as a proof of concept was the chrome extension, due to its low requirements, but the ability to build sophisticated view controller mechanisms efficiently and fast.
-||||||| a11bbc80
-The microservice we were able to fully develop and use as a proof of concept was the chrome extension, due to its low requirements.
-=======
 ## Chrome Extension
->>>>>>> 8ae19f193bb6e5d516b9f13302d4a5e0bb8d2eea
 
 The Google Chrome extension is meant to be source of convenience for our users. Simply by installing our extension and selecting their required text, users can get a customized summary of complex legal documents with a single click. They can also adjust the granularity of this summary and download it as desired.
 
 ## How we built it
 
-The Google Chrome extension is implemented primarily in JavaScript and styled with Bootstrap. It makes calls to our custom API in our Python backend .... etc.
+The Google Chrome extension is implemented in JavaScript and styled with Bootstrap. It makes use of a background service worker script and injects content scripts upon various events. We were careful about protecting user privacy and site security, with the use of best practices like avoiding identifiers, cross-site scripting and reliance on external scripts.
+
+The landing page / Demo is built with React and Gatsby and styled with Tailwind. 
+
+The Python backend (flask web-app) 
+
+The Flutter app
+
 ## Challenges we ran into
 
 ## Accomplishments that we're proud of
@@ -36,7 +38,7 @@ The Google Chrome extension is implemented primarily in JavaScript and styled wi
 ## What we learned
 
 ## What's next for TermnCo
-
+Scale
 ## Dependencies
 Chrome extension: Bootstrap 4, jQuery
 Flutter app: 
