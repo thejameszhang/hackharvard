@@ -51,7 +51,7 @@ const FeaturesSplit = ({
 
   const sectionHeader = {
     title: 'Cutting-edge Natural Language Processing at every click',
-    paragraph: 'Receive detailed and accurate summaries of huge amounts of text instantly, saving you huge amounts of time.'
+    paragraph: 'Receive detailed and accurate summaries of huge amounts of text instantly, saving you your invaluable time.'
   };
 
   return (
@@ -67,13 +67,13 @@ const FeaturesSplit = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
+                  The T5 Text-to-Text Transformer Model
                   </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  Retain the details
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                We use natural language processing to retain the most semantically relevant information, ensuring that you only have to read what really matters.
                   </p>
               </div>
               <div className={
@@ -93,13 +93,13 @@ const FeaturesSplit = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-right" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
+                  Granularity control
                   </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  Zoom in and out 
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Using our zoom feature, customize how detailed you want your summary to be.
                   </p>
               </div>
               <div className={
@@ -119,13 +119,13 @@ const FeaturesSplit = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
+                  Community reviews platform
                   </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  See previous reviews
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Join a community of like-minded individuals who care about their legal rights and access helpful community reviews and discussion forums.
                   </p>
               </div>
               <div className={
