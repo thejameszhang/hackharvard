@@ -5,7 +5,7 @@ document.getElementById("zoomOut").addEventListener("click", zoomOut);
 document.getElementById("download").addEventListener("click", downloadText);
 
 function parseAll(element){
-    const text = "placeholder from API call";
+    const text = document.body.innerText;
     openTextModal(text);
 };
 function parseSelected(element) {
@@ -15,21 +15,21 @@ function parseSelected(element) {
 function zoomIn(element){};
 function zoomOut(element){};
 function downloadText(element){
-    console.log("download clicked");
-    const file = new File([window.getSelection().toString()], 'summary.txt', {
+    const text = document.getElementById('textarea').value
+    const file = new File([text], 'summary.txt', {
     type: 'text/plain',
     });
   
-    const link = document.createElement('a')
-    const url = URL.createObjectURL(file)
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(file);
   
-    link.href = url
-    link.download = file.name
-    document.body.appendChild(link)
-    link.click()
+    link.href = url;
+    link.download = file.name;
+    document.body.appendChild(link);
+    link.click();
   
-    document.body.removeChild(link)
-    window.URL.revokeObjectURL(url)
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
 };
 async function openTextModal(text) {
     document.getElementById("text").classList.remove("d-none");
@@ -55,9 +55,8 @@ async function summarized(text){
             "text": text })
     });
     Promise.resolve(response.text()).then(data => {
-        console.log(data);
         document.getElementById('textarea').value = format(data);
-        return data;
+        return format(data);
     });
 
 }
