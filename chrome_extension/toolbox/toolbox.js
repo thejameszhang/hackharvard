@@ -35,6 +35,7 @@ function downloadText(element){
 };
 async function openTextModal(text) {
     document.getElementById("text").classList.remove("d-none");
+    // need to transform text into the summary  
     document.getElementById('textarea').value = text;
     console.log("making text bar visible");
 }
