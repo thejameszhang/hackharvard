@@ -24,8 +24,8 @@ original_text = "Junk foods taste good that's why it is mostly liked by everyone
 
 class T5Model:
     def __init__(self):
-        self.model = T5ForConditionalGeneration.from_pretrained('t5-small')
-        self.tokenizer = T5Tokenizer.from_pretrained('t5-small')
+        self.model = T5ForConditionalGeneration.from_pretrained('t5-large')
+        self.tokenizer = T5Tokenizer.from_pretrained('t5-large')
 
     def summarize(self, text, granularity):
         text = "summarize:" + text
