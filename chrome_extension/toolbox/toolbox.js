@@ -4,7 +4,8 @@ document.getElementById("select").addEventListener("click", parseSelected);
 document.getElementById("zoomIn").addEventListener("click", zoomIn);
 document.getElementById("zoomOut").addEventListener("click", zoomOut);
 document.getElementById("download").addEventListener("click", downloadText);
-// Define global variables.
+
+// Every request to summarize some text will have 3 levels of specificity.
 var summaries = ["", "", ""];
 var index = 0;
 var maxIndex = 2;
@@ -15,12 +16,14 @@ function parseAll(element){
     index = 0;
     openTextModal(text);
 };
+
 function parseSelected(element) {
     console.log("parsing only highlighted text");
     index = 0;
     const text = window.getSelection().toString();
     openTextModal(text);
 };
+
 function zoomIn(element){
     console.log("zooming in");
     if (index > 0){
@@ -28,6 +31,7 @@ function zoomIn(element){
     }
     document.getElementById('textarea').value = summaries[index];
 };
+
 function zoomOut(element){
     console.log("zooming out");
     if (index < maxIndex){
@@ -35,11 +39,12 @@ function zoomOut(element){
     }
     document.getElementById('textarea').value = summaries[index];
 };
+
 function downloadText(element){
     console.log("downloading");
     const text = document.getElementById('textarea').value
     const file = new File([text], 'summary.txt', {
-    type: 'text/plain',
+        type: 'text/plain',
     });
   
     const link = document.createElement('a');
@@ -53,6 +58,7 @@ function downloadText(element){
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
 };
+
 async function openTextModal(text) {
     document.getElementById("text").classList.remove("d-none");
     // need to transform text into the summary  
@@ -64,32 +70,29 @@ async function openTextModal(text) {
       } finally {
         hideSpinner();
       }
-    
 }
+
 async function summarized(text){
     for (let i = 0; i < 3; i++) {
         const response = await fetch("http://127.0.0.1:5000/get_summary", {
-                method: 'POST',
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                "text": text ,
-                "size":i})
+            method: 'POST',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+            "text": text,
+            "size": i})
         });
 
         Promise.resolve(response.text()).then(data => {
             summaries[i] = format(data);
-            
         });
-        
-        
     }
     document.getElementById('textarea').value = summaries[index];
     console.log(summaries);
-
 }
+
 function showSpinner() {
     document.getElementById('loader').style.display = 'flex';
 }
@@ -97,6 +100,7 @@ function showSpinner() {
 function hideSpinner() {
     document.getElementById('loader').style.display = 'none';
 }
+
 // formats our data
 function format(text){
     var res = "";
@@ -114,4 +118,3 @@ function format(text){
       }
     return res;
 }
-//http://127.0.0.1:5000/get_summary 
