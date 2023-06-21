@@ -29,7 +29,7 @@ async function openSidebar(element) {
     console.log("open sidebar");
     // Wait for getCurrentTab() to return the current tab.
     const tab = await getCurrentTab();
-    // 
+    // Inject this javascript functionality into all other js files.
     chrome.scripting.executeScript({
         target: {tabId: tab.id},
         files: ['content_script.js','toolbox/toolbox.js', 'text.js']
