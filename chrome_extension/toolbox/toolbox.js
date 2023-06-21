@@ -1,34 +1,42 @@
+// Listen for clicks on all of the options on the sidebar.
 document.getElementById("all").addEventListener("click", parseAll);
 document.getElementById("select").addEventListener("click", parseSelected);
 document.getElementById("zoomIn").addEventListener("click", zoomIn);
 document.getElementById("zoomOut").addEventListener("click", zoomOut);
 document.getElementById("download").addEventListener("click", downloadText);
+// Define global variables.
 var summaries = ["", "", ""];
 var index = 0;
 var maxIndex = 2;
+
 function parseAll(element){
+    console.log("parsing all");
     const text = document.body.innerText;
     index = 0;
     openTextModal(text);
 };
 function parseSelected(element) {
+    console.log("parsing only highlighted text");
     index = 0;
     const text = window.getSelection().toString();
     openTextModal(text);
 };
 function zoomIn(element){
+    console.log("zooming in");
     if (index > 0){
         index--;
     }
     document.getElementById('textarea').value = summaries[index];
 };
 function zoomOut(element){
+    console.log("zooming out");
     if (index < maxIndex){
         index++;
     }
     document.getElementById('textarea').value = summaries[index];
 };
 function downloadText(element){
+    console.log("downloading");
     const text = document.getElementById('textarea').value
     const file = new File([text], 'summary.txt', {
     type: 'text/plain',
