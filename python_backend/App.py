@@ -17,6 +17,7 @@ def get_summary():
     summary = model.summarize(text, granularity)
     print(summary)
     return summary
+    
 if __name__ == '__main__':
     app.run(debug=True)
     
